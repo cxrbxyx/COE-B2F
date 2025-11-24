@@ -18,6 +18,8 @@
 /wp-*.php
 /xmlrpc.php
 
+# Configuration
+!wp-config.php
 
 !/wp-content/themes/
 
