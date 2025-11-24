@@ -1,48 +1,21 @@
-# Wordpress - ignore core, configuration, examples, uploads and logs.
-# https://github.com/github/gitignore/blob/main/WordPress.gitignore
+# 1. Ignoramos TODO el núcleo de WordPress
+/*
 
-# Core
-#
-# Note: if you want to stage/commit WP core files
-# you can delete this whole section/until Configuration.
-/wp-admin/
-/wp-content/index.php
-/wp-content/languages
-/wp-content/plugins/index.php
-/wp-content/themes/index.php
-/wp-includes/
-/index.php
-/license.txt
-/readme.html
-/wp-*.php
-/xmlrpc.php
+# 2. NO ignorar (Permitir) estas carpetas especiales
+!/wp-content/
 
-# Configuration
-wp-config.php
+# 3. Dentro de wp-content, ignoramos todo por defecto...
+/wp-content/*
 
-# Example themes
-/wp-content/themes/twenty*/
+# 4. ...PERO permitimos explícitamente TU tema
+!/wp-content/themes/
+/wp-content/themes/*
+!/wp-content/themes/NOMBRE_DE_TU_CARPETA/
 
-# Example plugin
-/wp-content/plugins/hello.php
+# 5. Permitimos también la carpeta de uploads (imágenes)
+!/wp-content/uploads/
 
-# Uploads
-/wp-content/uploads/
-
-# Log files
-*.log
-
-# htaccess
-/.htaccess
-
-# All plugins
-#
-# Note: If you wish to whitelist plugins,
-# uncomment the next line
-#/wp-content/plugins
-
-# All themes
-#
-# Note: If you wish to whitelist themes,
-# uncomment the next line
-#/wp-content/themes
+# 6. Archivos importantes de sistema
+!/.gitignore
+!/README.md
+!/sql_dumps/
